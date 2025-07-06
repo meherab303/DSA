@@ -23,15 +23,20 @@ void insert_at_tail(Node* &head,Node* &tail,int val){
     tail->next=newNode;
     tail=newNode;
 }
-void printing_linked_list(Node* head){
-    
-    while(head!=NULL){
-        
-        cout<<head->val<<endl;
+void check_ascending_order_in_linked_list(Node* head){
+    int flag=0;
+    while(head->next!=NULL){
+
+        if(head->val > head->next->val){
+            flag=1;
+            break;
+        }
         head=head->next;
     }
-    
-    
+
+    flag?cout<<"Not ascending":cout<<"ascending";
+
+   
 }
 int main()
 {
@@ -43,7 +48,7 @@ int main()
     int val;cin>>val;
     insert_at_tail(head,tail,val);
   }
-  printing_linked_list(head);
+  check_ascending_order_in_linked_list(head);
    
   return 0;
 }

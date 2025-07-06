@@ -23,14 +23,33 @@ void insert_at_tail(Node* &head,Node* &tail,int val){
     tail->next=newNode;
     tail=newNode;
 }
-void printing_linked_list(Node* head){
+void check_duplicate_in_linked_list(Node* head){
     
-    while(head!=NULL){
+
+    int flag=0;
+    Node* tmp=head->next;
+
+    while(head->next!=NULL){
+        while(tmp!=NULL){
+
+            if(head->val==tmp->val){
+            flag=1;
+            break;
+        }
+
+         tmp=tmp->next;
+        }
         
-        cout<<head->val<<endl;
+       if(flag==1)break;
         head=head->next;
+        tmp=head->next;
     }
-    
+
+    if(flag==1){
+        cout<<"YES DUPLICATE VALUE";
+    }else{
+         cout<<"NO DUPLICATE VALUE";
+    }
     
 }
 int main()
@@ -43,7 +62,7 @@ int main()
     int val;cin>>val;
     insert_at_tail(head,tail,val);
   }
-  printing_linked_list(head);
+  check_duplicate_in_linked_list(head);
    
   return 0;
 }
