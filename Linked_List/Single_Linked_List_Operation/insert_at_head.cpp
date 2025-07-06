@@ -21,10 +21,17 @@ void insert_at_tail(Node* &head,int val){   //time complexity --o(1)
 
 void printing_linked_list(Node* head){
     // Node* tmp=head;
+    int count=0;
+
     while(head!=NULL){
+        count+=1;
         cout<<head->val<<endl;
         head=head->next;
     }
+
+    //size of the list
+    cout<<count;
+
 }
 
 int main()
@@ -38,7 +45,7 @@ int main()
 
   insert_at_tail(head,200);
   printing_linked_list(head);
-  printing_linked_list(head);
+ 
    
   return 0;
 }
