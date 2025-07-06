@@ -17,6 +17,7 @@ void insert_at_any_pos(Node* head,int idx,int val){ //time complexity --o(1)
     Node* newnode= new Node(val); //o(1)
     for(int i=0;i<idx-1;i++){   // o(n)
         head=head->next;
+        if(head==NULL) return;
     }
     newnode->next=head->next; //o(1)
     head->next=newnode;  //o(1)
