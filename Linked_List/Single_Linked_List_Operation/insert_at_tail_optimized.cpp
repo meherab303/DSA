@@ -13,36 +13,36 @@ class Node{
 
 
 };
-void insert_at_any_pos(Node* head,int idx,int val){ //time complexity --o(1)
-    Node* newnode= new Node(val); //o(1)
-    for(int i=0;i<idx-1;i++){   // o(n)
-        head=head->next;
+void insert_at_tail_optimized(Node* &head,Node* &tail,int val){
+    Node* newnode= new Node(val);
+    if(head==NULL){
+        head=newnode;
+        tail=newnode;
+        return ;
     }
-    newnode->next=head->next; //o(1)
-    head->next=newnode;  //o(1)
-};
-
+    tail->next=newnode;
+    tail=newnode;
+}
 void printing_linked_list(Node* head){
     while(head!=NULL){
         cout<<head->val<<endl;
         head=head->next;
     }
 }
-
 int main()
 {
   Node* head=new Node(10);
   Node* a=new Node(20);
-  Node* b=new Node(30);
-  Node* c=new Node(40);
+  Node* tail=new Node(30);
 
   head->next=a;
-  a->next=b;
-  b->next=c;
-
-  insert_at_any_pos(head,2,100);
-  insert_at_any_pos(head,3,200);
+  a->next=tail;
+//    Node* head= NULL;
+//    Node* tail= NULL;
+  insert_at_tail_optimized(head,tail,40);
+  insert_at_tail_optimized(head,tail,50);
   printing_linked_list(head);
+  cout<<"tail="<<tail->val;
    
   return 0;
 }

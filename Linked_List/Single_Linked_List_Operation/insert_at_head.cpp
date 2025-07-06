@@ -13,7 +13,7 @@ class Node{
 
 
 };
-void insert_at_tail(Node* &head,int val){
+void insert_at_tail(Node* &head,int val){   //time complexity --o(1)
     Node* newnode=new Node(val);
     newnode->next=head;
     head=newnode;

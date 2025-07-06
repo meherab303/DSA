@@ -14,7 +14,8 @@ class Node{
 
 };
 
-void insert_at_tail(Node* &head,int val){
+void insert_at_tail(Node* &head,int val){ //time complexity --o(n)for inserting 1 value.for n value inserting-->o(n*n)=not optimized
+
     Node* newnode=new Node(val);
     //corner case if linked list is empty
     if(head==NULL){
@@ -25,7 +26,7 @@ void insert_at_tail(Node* &head,int val){
 
     Node* tmp=head;
 
-    while(tmp->next!=NULL){
+    while(tmp->next!=NULL){ //o(n)
         tmp=tmp->next;
     }
     tmp->next=newnode;
