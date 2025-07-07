@@ -1,1 +1,5 @@
-40 30 20 10 
+30 20 100 70 50 60 40 
+--After sorting--
+100 70 60 50 40 30 20 
+head ache ekhon= 100
+tail ache ekhon= 20

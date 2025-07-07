@@ -23,17 +23,23 @@ void insert_at_tail(Node* &head,Node* &tail,int val){
     tail->next=newNode;
     tail=newNode;
 }
-
-// using recursion
-void printing_Linked_list_reverse(Node* head){
-    //base case
-    if(head==NULL){
-        return;
+void printing_Linked_list(Node* head){
+    while(head!=NULL){
+        cout<<head->val<<" ";
+        head=head->next;
     }
-    printing_Linked_list_reverse(head->next);
-    
-    cout<<head->val<<" ";
 }
+void delete_at_tail(Node* head,Node* &tail){
+
+    while(head->next->next!=NULL){
+    head=head->next;
+    }
+    Node* deleteNode=head->next;
+    head->next=deleteNode->next;
+    tail=head;
+    delete deleteNode;
+}
+
 int main()
 {
     Node* head=NULL;
@@ -45,7 +51,14 @@ int main()
         if(val==-1)break;
         insert_at_tail(head,tail,val);
     }
-    printing_Linked_list_reverse(head);
+    printing_Linked_list(head);
+    cout<<"--After deletion--"<<endl;
+    delete_at_tail(head,tail);
+    printing_Linked_list(head);
+    cout<<endl;
+    cout<<"head ache ekhon= "<<head->val<<endl;
+    cout<<"tail ache ekhon= "<<tail->val<<endl;
+
 
   
    
