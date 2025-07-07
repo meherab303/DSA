@@ -1,4 +1,5 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+
 using namespace std;
 class Node{
 
@@ -23,38 +24,45 @@ void insert_at_tail(Node* &head,Node* &tail,int val){
     tail->next=newNode;
     tail=newNode;
 }
-void printing_Linked_list(Node* head){
+int max_value_from_linked_list(Node* head){
+    int max=INT_MIN;
     while(head!=NULL){
-        cout<<head->val<<" ";
+        if(head->val>max){
+            max=head->val;
+        }
         head=head->next;
     }
+    return max;
+};
+int min_value_from_linked_list(Node* head){
+    int min=INT_MAX;
+    while(head!=NULL){
+        if(head->val<min){
+            min=head->val;
+        }
+        head=head->next;
+    }
+    return min;
 }
-void delete_at_any_pos(Node* head,int idx){
 
-    for(int i=0;i<idx-1;i++){
-        head=head->next;
-    }
-    Node* deleteNode=head->next;
-    head->next=head->next->next;
-    delete deleteNode;
-}
+
 int main()
 {
     Node* head=NULL;
     Node* tail=NULL;
-
     int val;
     while(true){
         cin>>val;
-        if(val==-1)break;
+        if(val==-1){
+            break;
+        }
         insert_at_tail(head,tail,val);
     }
-    printing_Linked_list(head);
-    cout<<"--After deletion--"<<endl;
-    delete_at_any_pos(head,3);
-    printing_Linked_list(head);
+    int max=max_value_from_linked_list(head);
+    int min=min_value_from_linked_list(head);
+    int diff=max-min;
+    
+    cout<<diff;
 
-  
-   
-  return 0;
+    return 0;
 }
