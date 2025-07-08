@@ -1,1 +1,3 @@
-80
+head ache=30
+tail ache=30
+No value in linked list

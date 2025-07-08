@@ -1,0 +1,1 @@
+cout<<"tail ache="<<tail->val;
