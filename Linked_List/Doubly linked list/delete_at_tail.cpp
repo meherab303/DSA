@@ -24,20 +24,15 @@ void printing_forward_doubly_linked_list(Node* head){
     }
     cout<<endl;
 }
-void  insert_at_any_pos_excluding_head_tail(Node* head,int idx,int val){
-    Node* newNode=new Node(val);
-    for(int i=1;i<idx;i++){
-        head=head->next;
-    }
-    // cout<<head->val<<endl; //check kora j head idx er ager node e ache kina
-
-    newNode->next=head->next;
-    head->next->prev=newNode;
-
-    head->next=newNode;
-    newNode->prev=head;
-
-
+void  delete_at_tail(Node* &head,Node* &tail){
+   Node* deleteNode= tail;;
+   tail=tail->prev;
+   delete deleteNode;
+   if(tail==NULL){
+    head=NULL;
+    return;
+   }
+   tail->next=NULL;
 }
 
 int main()
@@ -53,8 +48,12 @@ int main()
   a->next=tail;
   tail->prev=a;
 
-  insert_at_any_pos_excluding_head_tail(head,2,40); 
-  insert_at_any_pos_excluding_head_tail(head,2,50); 
+  delete_at_tail(head,tail);
+  delete_at_tail(head,tail);
+  delete_at_tail(head,tail);
+
+  cout<<head<<endl;
+  cout<<tail<<endl;
   printing_forward_doubly_linked_list(head);
   
  
