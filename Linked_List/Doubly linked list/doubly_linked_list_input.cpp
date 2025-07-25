@@ -24,33 +24,35 @@ void printing_forward_doubly_linked_list(Node* head){
     }
     cout<<endl;
 }
-void  delete_at_any_pos(Node* head,int idx){
-  Node* tmp=head;
-  for(int i=1;i<idx;i++){
-    tmp=tmp->next;
-  }
-  Node* deleteNode=tmp->next;
-  tmp->next=deleteNode->next;
-  tmp->next->prev=tmp;
-  delete deleteNode;
+void  insert_at_tail(Node* &head,Node* &tail,int val){
+    Node* newNode= new Node(val);
 
-   
+    if(head==NULL){
+        head=newNode;
+        tail=newNode;
+        return;
+    }
+
+    newNode->prev=tail;
+    tail->next=newNode;
+    tail=newNode;
 }
 
 int main()
 {
+    Node* head=NULL;
+    Node* tail=NULL;
+    int val;
+    while(true){
+        cin>>val;
+        if(val==-1){
+        break;
+    }
+    insert_at_tail(head,tail,val);  
+ }
 
-  Node* head=new Node(10);
-  Node* a=new Node(20);
-  Node* tail=new Node(30);
-
-  head->next=a;
-  a->prev=head;
-
-  a->next=tail;
-  tail->prev=a;
-
-  delete_at_any_pos(head,1);
+ 
+  
   printing_forward_doubly_linked_list(head);
   
  
