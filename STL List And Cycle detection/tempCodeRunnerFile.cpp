@@ -1,1 +1,1 @@
-l2.erase(next(l2.begin(),3));
+l.resize(3);
