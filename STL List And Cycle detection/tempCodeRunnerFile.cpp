@@ -1,1 +1,1 @@
-l.resize(3);
+  d->next=b;
