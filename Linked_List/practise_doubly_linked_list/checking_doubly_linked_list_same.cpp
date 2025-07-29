@@ -80,5 +80,6 @@ int main()
    checking_two_doubly_linked_list_same_or_not(head1,head2,flag);
    cout<<endl;
    flag==1?cout<<"not same":cout<<"same";
+   
   return 0;
 }
