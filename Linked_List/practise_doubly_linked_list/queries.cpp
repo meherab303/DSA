@@ -17,7 +17,10 @@ class Node{
 };
 void insert_at_any(Node* head,Node* &tail,int val,int idx, bool &flag){
     Node* newNode=new Node(val);
-
+    if(head==NULL){
+        flag=true;
+        return;
+    }
     Node* tmp=head;
     for(int i=1;i<idx;i++){
         tmp=tmp->next;
@@ -58,6 +61,7 @@ void insert_at_head(Node* &head,Node* &tail,int val){
 }
 
 void printing_forwarding(Node* head){
+     cout<<"L -> ";
     while(head!=NULL){
         cout<<head->val<<" ";
         head=head->next;
@@ -65,6 +69,7 @@ void printing_forwarding(Node* head){
     cout<<endl;
 }
 void printing_backward(Node* tail){
+    cout<<"R -> ";
     while(tail!=NULL){
         cout<<tail->val<<" ";
         tail=tail->prev;
@@ -109,3 +114,5 @@ int main()
    
   return 0;
 }
+
+
