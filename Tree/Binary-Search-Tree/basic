@@ -1,0 +1,4 @@
+1.Binary search+ Binary Tree.
+2.values of all left node <Root Node;
+3.Values of All right Node >Root Node;
+3.Duplicate Values won’t be inserted; only their count will be maintained.
