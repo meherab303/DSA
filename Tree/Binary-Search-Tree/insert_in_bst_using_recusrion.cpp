@@ -69,7 +69,7 @@ void lever_order(Node* root){
 
 }
 
-void insert_in_bst(Node* &root,int x){
+void insert_in_bst_using_recusrion(Node* &root,int x){
     if(root==NULL){
         root=new Node(x);
         return;
@@ -78,13 +78,13 @@ void insert_in_bst(Node* &root,int x){
         if(root->right==NULL){
             root->right=new Node(x);
         }else{
-            insert_in_bst(root->right,x);
+            insert_in_bst_using_recusrion(root->right,x);
         }
     }else{
         if(root->left==NULL){
             root->left=new Node(x);
         }else{
-            insert_in_bst(root->left,x);
+            insert_in_bst_using_recusrion(root->left,x);
         }
     }
 }
@@ -94,9 +94,16 @@ int main()
 
 
   int value;cin>>value; 
-  insert_in_bst(root,value);
+  insert_in_bst_using_recusrion(root,value);
+  insert_in_bst_using_recusrion(root,11);
   lever_order(root); 
   
    
   return 0;
 }
+
+
+//1.complexity: for each node= o(h)
+// for N node=o(n*h)
+// for perfect bst N nodes insertion =o(n*logn)
+//for worst bst N nodes insertion=o(n*n);
