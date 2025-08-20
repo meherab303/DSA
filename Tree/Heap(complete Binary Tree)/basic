@@ -2,3 +2,6 @@
 2.max heap( always return max value)->Root Node is always greater or equalt to child Node.In Array, 0 index is max
 3.min heap(always return min value)-> Root Node is always smaller or equal to child Node.In Array,0 index is min.
 4.No sorting in array.better than using sorting function when contineously max value is required.
+5.complexity : inserting 1 value=o(logN)
+                inserting N value=o(NlogN)
+6.insert ba delete er time e 1.maintain complete binary tree 2.maintain max heap or min heap.
