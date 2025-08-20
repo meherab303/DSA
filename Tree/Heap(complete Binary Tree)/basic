@@ -1,0 +1,4 @@
+1.Heap is An Array but behind the scene complete binary tree(All levels are filled except possibly the last level and last level is filled from left to right without gaps)
+2.max heap( always return max value)->Root Node is always greater or equalt to child Node.In Array, 0 index is max
+3.min heap(always return min value)-> Root Node is always smaller or equal to child Node.In Array,0 index is min.
+4.No sorting in array.better than using sorting function when contineously max value is required.
