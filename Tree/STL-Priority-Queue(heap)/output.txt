@@ -1,6 +1,8 @@
-adib 0
-fahim 5
-mamun 15
-nahin 10
-0
-Ache
+cricket 1
+football 1
+i 1
+kabaddi 1
+love 3
+they 1
+watching 1
+we 1
