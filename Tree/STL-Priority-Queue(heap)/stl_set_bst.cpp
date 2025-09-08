@@ -36,10 +36,29 @@ int main()
   cout<<bst.size()<<endl;
   cout<<bst.empty()<<endl;
 
-  
+  if(bst.find(9)!=bst.end())
+    cout<<"found";
+  else
+    cout<<"not found" ; 
+
+//(find vs count)
+
+// find(x) → একটা iterator রিটার্ন করে।
+
+// যদি element থাকে → সেই element এর iterator দেয়।
+
+// না থাকলে → s.end() রিটার্ন করে।
+
+// count(x) → শুধু সংখ্যা রিটার্ন করে (0 বা 1)।
+
+//তাই যদি শুধু check করতে চাও element আছে কিনা, তবে count() বেশি ছোট ও clean code দেয়।
+// আর যদি element এর iterator/position দরকার হয় (যেমন erase করতে, বা পরের element access করতে) তবে find() ব্যবহার করতে হবে।  
 
   return 0;
 }
+
+
+
 
 // duplicate value remove kore dei.
 // behind the scene Balance binary search tree maintain kore 
