@@ -11,6 +11,7 @@ class Student{
         this->marks=marks;
     }
 };
+
 class cmp{
     public:
     bool operator()(Student l,Student r){
@@ -21,6 +22,7 @@ class cmp{
         }
     }
 };
+
 int main()
 {
   

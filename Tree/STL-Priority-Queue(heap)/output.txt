@@ -1,3 +1,6 @@
-fahim 10 86
-nahin 12 86
-sajib 5 98
+adib 0
+fahim 5
+mamun 15
+nahin 10
+0
+Ache
