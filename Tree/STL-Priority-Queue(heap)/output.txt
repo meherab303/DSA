@@ -1,8 +1,6 @@
-cricket 1
-football 1
-i 1
-kabaddi 1
-love 3
-they 1
-watching 1
-we 1
+0 1 2 4 5 6 7 8 9 100 
+0 1 2 4 5 6 7 8 9 100 
+ache
+0 1 2 4 5 6 7 8 9 
+9
+0
